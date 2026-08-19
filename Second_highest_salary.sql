@@ -20,13 +20,8 @@ WHERE salary < (
     FROM Employee
 );
 
--- Approach 2: Using DENSE_RANK() (Window Function)
-WITH RankedSalaries AS (
-    SELECT 
-        salary,
-        DENSE_RANK() OVER (ORDER BY salary DESC) AS rank_num
-    FROM Employee
-)
-SELECT MAX(salary) AS SecondHighestSalary
-FROM RankedSalaries
-WHERE rank_num = 2;
+-- Approach 2: Using LIMIT / OFFSET
+SELECT DISTINCT salary AS SecondHighestSalary
+FROM Employee
+ORDER BY salary DESC
+LIMIT 1, 1;

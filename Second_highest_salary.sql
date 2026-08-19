@@ -1,8 +1,11 @@
+/*
 Question 1: Find Second Highest Salary
-Find the second highest salary from the `Employee` table. If there is no second highest salary, return `NULL`.
+Find the second highest salary from the Employee table. If there is no second highest salary, return NULL.
+*/
 
----
-
+-- =============================================
+-- 1. Table Creation & Sample Data
+-- =============================================
 CREATE TABLE Employee (
     id INT PRIMARY KEY,
     salary INT
@@ -13,11 +16,11 @@ INSERT INTO Employee (id, salary) VALUES
 (2, 200),
 (3, 300);
 
----
+-- =============================================
+-- 2. Solution
+-- =============================================
 
-Answer
-
-Approach 1: Subquery with `MAX()`
+-- Approach 1: Subquery with MAX()
 SELECT MAX(salary) AS SecondHighestSalary
 FROM Employee
 WHERE salary < (
@@ -25,7 +28,7 @@ WHERE salary < (
     FROM Employee
 );
 
-Approach 2: Using `DENSE_RANK()` (Window Function)
+-- Approach 2: Using DENSE_RANK() (Window Function)
 WITH RankedSalaries AS (
     SELECT 
         salary,
@@ -35,5 +38,3 @@ WITH RankedSalaries AS (
 SELECT MAX(salary) AS SecondHighestSalary
 FROM RankedSalaries
 WHERE rank_num = 2;
-
----

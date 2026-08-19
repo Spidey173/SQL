@@ -1,11 +1,7 @@
 /*
-Question 1: Find Second Highest Salary
-Find the second highest salary from the Employee table. If there is no second highest salary, return NULL.
+Question 1: Find Second Highest Salary from the Employee table. If there is no second highest salary, return NULL.
 */
 
--- =============================================
--- 1. Table Creation & Sample Data
--- =============================================
 CREATE TABLE Employee (
     id INT PRIMARY KEY,
     salary INT
@@ -15,10 +11,6 @@ INSERT INTO Employee (id, salary) VALUES
 (1, 100),
 (2, 200),
 (3, 300);
-
--- =============================================
--- 2. Solution
--- =============================================
 
 -- Approach 1: Subquery with MAX()
 SELECT MAX(salary) AS SecondHighestSalary

@@ -12,16 +12,6 @@ INSERT INTO Employee (id, salary) VALUES
 (2, 200),
 (3, 300);
 
--- Approach 1: Subquery with MAX()
 SELECT MAX(salary) AS SecondHighestSalary
 FROM Employee
-WHERE salary < (
-    SELECT MAX(salary)
-    FROM Employee
-);
-
--- Approach 2: Using LIMIT / OFFSET
-SELECT DISTINCT salary AS SecondHighestSalary
-FROM Employee
-ORDER BY salary DESC
-LIMIT 1, 1;
+WHERE salary < (SELECT MAX(salary) FROM Employee);

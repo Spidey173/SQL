@@ -9,10 +9,10 @@ CREATE TABLE Employee (
 );
 
 INSERT INTO Employee (id, name, email) VALUES
-(1, 'John', 'john@example.com'),
-(2, 'Bob', 'bob@example.com'),
-(3, 'John', 'john@example.com'),
-(4, 'Alice', 'alice@example.com');
+(1, 'Rahul', 'rahul@example.com'),
+(2, 'Pooja', 'pooja@example.com'),
+(3, 'Rahul', 'rahul@example.com'),
+(4, 'Ananya', 'ananya@example.com');
 
 SELECT name, COUNT(*)
 FROM Employee

@@ -8,3 +8,4 @@ Real-world SQL interview and practice questions with schemas, sample data, and s
 
 - [Second_highest_salary.sql](Second_highest_salary.sql) - Find the second highest salary from the Employee table.
 - [Find_duplicate_records.sql](Find_duplicate_records.sql) - Find duplicate records in a table.
+- [Employees_earning_more_than_manager.sql](Employees_earning_more_than_manager.sql) - Retrieve employees who earn more than their manager.
